@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Billing from "./pages/Billing";
+import DashBoard from "./pages/DashBoard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div id="container">
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/billing" element={<Billing />} />
+          <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+
+        <Footer />
+        {/* <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/billing"
+            element={
+              // Use conditional rendering directly in the element prop
+              localStorage.getItem("user") ? (
+                <Billing />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              // Use conditional rendering directly in the element prop
+              localStorage.getItem("user") ? (
+                <DashBoard />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer /> */}
+      </div>
+    </>
   );
 }
 

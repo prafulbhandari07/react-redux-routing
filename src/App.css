@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+*::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root,
+#container {
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#nav {
+  width: 80%;
+  height: 80%;
+  display: flex;
+}
+
+#navLogo {
+  width: 20%;
+}
+
+#navLogo img {
+  height: 50px;
+  width: 50px;
+}
+
+#navItems {
+  width: 70%;
+}
+
+#navItems ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  gap: 5rem;
+}
+#navItems ul li {
+  color: rgb(216, 0, 0);
+}
+
+#navButtons {
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 80px;
+}
+
+#navButtons button {
+  color: solid black;
+  background-color: red;
+  width: 80px;
+  border: none;
+  border-radius: 50px;
+}
+
+#navButtons button:hover {
+  color: white;
+  background-color: black;
+  border: 5px solid red;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #f4f4f4;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footerContainer {
+  width: 80%;
+  height: 80%;
+  display: flex;
+}
+
+#footerRight {
+  width: 50%;
+}
+a {
+  margin-left: 150px;
+}
+#footerLeft {
+  width: 50%;
+}
+
+#homeCont,
+#loginCont,
+#billingCont,
+#dashboardCont {
+  width: 100%;
+  height: 80%;
+  background-color: rgb(128, 40, 40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginCard form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  gap: 1rem;
 }
